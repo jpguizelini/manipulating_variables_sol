@@ -1,4 +1,3 @@
-<a id="English"></a> English
 ## Contrato de Manipulação de Variáveis em Solidity
 
 Este repositório contém um contrato inteligente escrito em Solidity com o objetivo de estudar e entender a manipulação de variáveis na linguagem Solidity. O contrato inclui exemplos de variáveis globais, funções para definir e modificar valores, e funções para retornar resultados baseados em operações com essas variáveis.
