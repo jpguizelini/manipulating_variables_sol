@@ -1,4 +1,5 @@
-## Contrato de Variáveis em Solidity
+<a id="English"></a> English
+## Contrato de Manipulação de Variáveis em Solidity
 
 Este repositório contém um contrato inteligente escrito em Solidity com o objetivo de estudar e entender a manipulação de variáveis na linguagem Solidity. O contrato inclui exemplos de variáveis globais, funções para definir e modificar valores, e funções para retornar resultados baseados em operações com essas variáveis.
 
@@ -16,11 +17,11 @@ O objetivo deste contrato é servir como um exemplo prático para entender a man
 
 Para utilizar este contrato, compile-o e implante-o em uma rede de teste Ethereum usando um ambiente de desenvolvimento, recomendo o Remix. As funções podem ser chamadas para observar como as variáveis são manipuladas e armazenadas.
 
----
 
-**Aqui estão as explicações simples sobre cada um dos tipos de variáveis, das variáveis usadas e das funções usados no contrato Solidity:**
 
-##
+### Aqui estão as explicações simples sobre cada um dos tipos de variáveis, das variáveis usadas e das funções usados no contrato Solidity:
+
+
 
 **Tipos das Variáveis:**
 
@@ -40,7 +41,7 @@ Para utilizar este contrato, compile-o e implante-o em uma rede de teste Ethereu
 
 - **bytes**: Armazena qualquer tipo de  dados binários de comprimento variável.
 
-##
+
 
 **Variáveis:**
 
@@ -65,3 +66,74 @@ Para utilizar este contrato, compile-o e implante-o em uma rede de teste Ethereu
 - **armazenarDados(bytes memory _dados):** Armazena um array de bytes (`_dados`) na variável `Meusbytes`, permitindo o armazenamento seguro de dados binários na blockchain.
 - **convertStringBytes(string memory _minhafrase):** Função `pure` que converte uma string em um valor `bytes32`, útil para trabalhar com strings na blockchain.
 - **obterTamanhoDados():** Função `view` que retorna o tamanho do array `Meusbytes`, informando a quantidade de bytes armazenados.
+
+
+---
+
+
+### Variable Manipulation in Solidity Contract
+
+This repository contains a smart contract written in Solidity with the aim of studying and understanding variable manipulation in the Solidity language. The contract includes examples of global variables, functions to set and modify values, and functions to return results based on operations with these variables.
+
+### Contract Description
+
+The `VariableContract` demonstrates the use of different types of variables, such as `uint8`, `int256`, `bool`, `address`, `string`, and `bytes`. It includes various functions to manipulate these variables.
+
+### Objective
+
+The objective of this contract is to serve as a practical example to understand variable manipulation in Solidity and the creation of functions to work with these variables.
+
+### Usage
+
+To use this contract, compile and deploy it on an Ethereum test network using a development environment, I recommend Remix. Functions can be called to observe how variables are manipulated and stored.
+
+
+
+### Here are simple explanations of each type of variable, the variables used, and the functions used in the Solidity contract:
+
+##
+
+**Variable Types:**
+
+- **uint8**: Stores 8-bit unsigned integers, ranging from 0 to 2^8 -1 (255).
+
+- **uint16**: Stores 16-bit unsigned integers, ranging from 0 to 2^16 -1 (65535).
+
+- **int256**: Stores 256-bit signed integers, ranging from -2^255 to 2^255-1.
+
+- **uint256**: Stores 256-bit unsigned integers, ranging from 0 to 2^256-1.
+
+- **bool**: Stores boolean values (`true` or `false`).
+
+- **address**: Stores Ethereum addresses (160 bits). Used to identify accounts or contracts.
+
+- **string**: Stores a sequence of characters.
+
+- **bytes**: Stores any type of variable-length binary data.
+
+
+
+**Variables:**
+
+- **maxPermit:** Sets a maximum limit for allowed values, initially set to 255. This variable is declared as public and can be used for demonstration purposes of uint8 variable limits.
+- **testLimit:** Stores an 8-bit integer value for testing purposes. This variable can be useful for testing functions or performing simple calculations.
+- **negative:** Stores a negative integer value (-1) that can be used in mathematical operations or as a reference for comparisons.
+- **number:** Stores a 256-bit integer value.
+- **negativeNumber:** Allows us to see that `int` does not store negative numbers.
+- **permission:** A boolean variable that controls the permission to perform certain actions in the contract. The initial value is always `false`, indicating that the permission is disabled by default.
+- **registeredAccount:** Stores the Ethereum account address registered in the contract. This information can be used to identify the user or associate actions with a specific account.
+- **name:** Stores the name of the user registered in the contract, allowing for a personalized experience.
+- **myBytes:** Byte array to securely and efficiently store binary data on the blockchain. This variable can be used to store various types of information, such as images, documents, or other files.
+
+**Functions:**
+
+- **insertMaxUint(uint8 _number):** Allows setting a new value for `testLimit`, adjusting a test value in the contract.
+- **insertNumber(uint256 _number):** Sets a new value for the `number` variable, storing a 256-bit integer (which is not possible as it is uint8).
+- **testNegative(int256 _number):** A `view` function that takes a negative integer parameter (`_number`) and returns the subtraction of this value from the constant `negative` value. This function can be used to perform mathematical calculations with negative numbers.
+- **changePermission(bool _trueOrFalse):** Allows activating or deactivating the permission (`permission`), controlling access to contract functionalities.
+- **registerAddress(address _address):** Registers a new Ethereum account address in the contract, associating it with the `registeredAccount` variable.
+- **registerMyAddress(string memory _myName):** Registers the sender's transaction address (`msg.sender`) in the `registeredAccount` variable and sets the user's name in the `name` variable. This function facilitates user registration in the contract.
+- **storeData(bytes memory _data):** Stores a byte array (`_data`) in the `myBytes` variable, allowing for secure storage of binary data on the blockchain.
+- **convertStringBytes(string memory _myPhrase):** A `pure` function that converts a string into a `bytes32` value, useful for working with strings on the blockchain.
+- **getDataSize():** A `view` function that returns the size of the `myBytes` array, indicating the number of bytes stored.
+
